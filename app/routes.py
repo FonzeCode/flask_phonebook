@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template
+from app.forms import PhoneForm
 
 @app.route('/')
 def index():
@@ -7,4 +8,5 @@ def index():
 
 @app.route('/add-phone')
 def add_phone():
-    return 'Add Phone'
+    form = PhoneForm()
+    return render_template('add_phone.html', form=form)
