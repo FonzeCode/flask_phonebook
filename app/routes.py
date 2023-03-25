@@ -19,6 +19,6 @@ def add_phone():
         phone = form.phone_number.data
         print(first, last, address, phone)
         new_contact = Address(first_name=first, last_name=last, address=address, phone_number=phone)
-        flash(f"{first} {last} has been added to the phone book", "success")
+        flash(f"{new_contact.first_name} {new_contact.last_name} has been added to the phone book", "success")
         return redirect(url_for('index'))
     return render_template('add_phone.html', form=form)
